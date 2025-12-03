@@ -974,3 +974,27 @@ img {
         margin-left: 1.5rem;
     }
 }
+
+/* new addons */
+.vision-section {
+  position: relative;
+  background: url('/img/VM.png') center/cover no-repeat !important;
+  padding: 120px 0;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.vision-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8); /* overlay color */
+  backdrop-filter: blur(2px);      /* optional premium blur */
+  z-index: 1;
+}
+
+.vision-section * {
+  position: relative;
+  z-index: 2; 
+}
