@@ -1,0 +1,166 @@
+@media (max-width:1200px) {
+
+    /* Header */
+    .header .navbar .navbar-brand.d-lg-none .sitename {
+        padding-left: 115px;
+    }
+
+    .header .navbar .navbar-brand.d-lg-none .header-logoimg {
+        position: absolute;
+        top: 0;
+        height: 100px;
+        box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, .2);
+        z-index: 9999;
+    }
+
+    .header .navbar-collapse .navbar-nav {
+        padding-top: 36px;
+        padding-left: 10px;
+    }
+
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .header .dropdown .dropdown-menu .inner-toggle::before {
+        transform: rotate(90deg)translateY(0%)translateX(-100%);
+        right: 15px;
+    }
+
+    .header .dropdown .dropdown-menu .inner-menu {
+        position: static;
+        visibility: visible;
+        padding-left: 24px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+
+    /* Header */
+    .header .navbar .navbar-brand.d-lg-none .sitename {
+        font-size: 24px;
+    }
+}
+
+@media (max-width:767px) {
+
+    /* Header */
+    .header .navbar .navbar-brand.d-lg-none .sitename {
+        font-size: calc(1rem + 1vw);
+    }
+
+    .navbar-toggler {
+        position: absolute;
+        left: auto;
+        right: -10px;
+        top: 10px;
+    }
+}
+
+/* css custom */
+.bg_color {
+    background-color: #004cff1c;
+}
+
+.page-header.Generator_rental {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/gen2.jpeg) center center / cover no-repeat;
+}
+
+.page-header.Generator_hire {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/gen3.jpeg) center center / cover no-repeat;
+}
+
+.page-header.Power_Generator_Rental {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/gen1.jpeg) center center / cover no-repeat;
+}
+
+.page-header.Generator_On_Rent {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/gen1.jpeg) center center / cover no-repeat;
+}
+
+.page-header.Diesel_Generator_rental {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/dieselGenBanner.png) center center / cover no-repeat;
+}
+
+.page-header.Power_Generator_Rental365 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Power_Generator_Rental365.png) center center / cover no-repeat;
+}
+
+.page-header.Generator_On_Lease {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Generator_On_Lease.png) center center / cover no-repeat;
+}
+
+.page-header.Power_Generator_1000 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/Power_Generator_1000.png) center center / cover no-repeat;
+}
+
+.page-header.Power_Generator_1200 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/gen6.png) center center / cover no-repeat;
+}
+
+.page-header.Power_Generator_1750 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/gen7.png) center center / cover no-repeat;
+}
+
+.page-header.Diesel_Generator_Rental600 {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/gen8.png) center center / cover no-repeat;
+}
+
+.page-header.Air_compressor_Rental {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/air_com.png) center center / cover no-repeat;
+}
+
+.about-section .about-img {
+    height: auto;
+}
+
+/* Custom table styles */
+.custom-table {
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    font-size: 16px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.custom-table thead th {
+    background-color: #0044cc;
+    color: #fff;
+    padding: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.custom-table tbody tr {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.custom-table tbody tr:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table td {
+    padding: 14px 18px;
+    vertical-align: middle;
+}
+
+.custom-table .btn-outline-primary {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 50px;
+}
+
+/* common */
+.header .navbar-nav a[href="get-quote.html"] {
+    display: none !important;
+}
+
+/* .footer a[href="get-quote.html"] {
+    display: none !important;
+} */
+
+/* .footer p.mb-2:nth-of-type(2) {
+    display: none;
+} */
