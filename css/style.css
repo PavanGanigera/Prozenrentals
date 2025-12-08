@@ -218,6 +218,20 @@ img {
     top: 0%;
 }
 
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .5rem 1rem;
+    clear: both;
+    font-size: 14px;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: rgba(0,0,0,0);
+    border: 0;
+}
+
 .header .dropdown .dropdown-menu .inner-menu {
     min-width: 300px;
     position: absolute;
