@@ -73,6 +73,21 @@
         $("#video").attr('src', $videoSrc);
     })
 
+    // Services dropdown on hover
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const servicesLink = document.querySelector('.nav-item.dropdown > a.nav-link.dropdown-toggle[href="services.html"]');
+
+        if (servicesLink) {
+            servicesLink.addEventListener('click', function (e) {
+                // Stop Bootstrap dropdown from interfering
+                e.stopPropagation();
+                // Manually redirect
+                window.location.href = this.getAttribute('href');
+            });
+        }
+    });
+
 
     // Clients carousel
     jQuery('.clients-carousel.owl-carousel').owlCarousel({
