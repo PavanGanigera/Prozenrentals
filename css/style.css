@@ -228,7 +228,7 @@ img {
     color: #212529;
     text-align: inherit;
     white-space: nowrap;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     border: 0;
 }
 
@@ -975,40 +975,44 @@ img {
 @media (min-width:768px) and (max-width:1200px) {}
 
 @media (max-width:767px) {
+
+
     .carousel .carousel-item .display-1 {
-        font-size: 45px;
+        font-size: 32px;
     }
 
     .carousel .carousel-caption {
         padding-bottom: 1rem;
-        padding-left: 7rem;
+        padding-left: 6rem;
     }
 
     .carousel .carousel-indicators {
-        margin-left: 1.5rem;
+        margin-left: 16px;
     }
 }
 
 /* new addons */
 .vision-section {
-  position: relative;
-  background: url('/img/VM.png') center/cover no-repeat !important;
-  padding: 120px 0;
-  text-align: center;
-  color: #fff;
-  overflow: hidden;
+    position: relative;
+    background: url('/img/VM.png') center/cover no-repeat !important;
+    padding: 120px 0;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
 }
 
 .vision-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.8); /* overlay color */
-  backdrop-filter: blur(2px);      /* optional premium blur */
-  z-index: 1;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    /* overlay color */
+    backdrop-filter: blur(2px);
+    /* optional premium blur */
+    z-index: 1;
 }
 
 .vision-section * {
-  position: relative;
-  z-index: 2; 
+    position: relative;
+    z-index: 2;
 }
