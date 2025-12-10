@@ -1,10 +1,12 @@
 (function ($) {
     "use strict";
+
     const QuoteLinks = document.querySelectorAll('.header a.btn[href="get-quote.html"]');
     QuoteLinks.forEach(link => {
         link.setAttribute('href', 'contact.html');
         // link.textContent = "Contact Us";
     });
+
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -15,11 +17,17 @@
     };
     spinner();
 
+    // WOW
+    if (typeof WOW !== "undefined") {
+        new WOW().init();
+    }
 
-    // Initiate the wowjs
-    new WOW().init();
-    AOS.init();
-
+    // AOS safe init
+    if (typeof AOS !== "undefined") {
+        AOS.init();
+    } else {
+        console.warn("AOS is not loaded – skipping AOS.init()");
+    }
 
     // Sticky Navbar
     $(window).scroll(function () {
@@ -30,13 +38,11 @@
         }
     });
 
-
     // Facts counter
     $('[data-toggle="counter-up"]').counterUp({
         delay: 10,
         time: 2000
     });
-
 
     // Experience
     $('.experience').waypoint(function () {
@@ -44,7 +50,6 @@
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
     }, { offset: '80%' });
-
 
     // Back to top button
     $(window).scroll(function () {
@@ -59,35 +64,26 @@
         return false;
     });
 
-
     // Modal Video
     var $videoSrc;
     $('.btn-play').click(function () {
         $videoSrc = $(this).data("src");
     });
-    console.log($videoSrc);
-    $('#videoModal').on('shown.bs.modal', function (e) {
+    $('#videoModal').on('shown.bs.modal', function () {
         $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-    })
-    $('#videoModal').on('hide.bs.modal', function (e) {
+    });
+    $('#videoModal').on('hide.bs.modal', function () {
         $("#video").attr('src', $videoSrc);
-    })
-
-    // Services dropdown on hover
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const servicesLink = document.querySelector('.nav-item.dropdown > a.nav-link.dropdown-toggle[href="services.html"]');
-
-        if (servicesLink) {
-            servicesLink.addEventListener('click', function (e) {
-                // Stop Bootstrap dropdown from interfering
-                e.stopPropagation();
-                // Manually redirect
-                window.location.href = this.getAttribute('href');
-            });
-        }
     });
 
+    // Services link: open services.html instead of only dropdown
+    const servicesLink = document.querySelector('.nav-item.dropdown > a.nav-link.dropdown-toggle[href="services.html"]');
+    if (servicesLink) {
+        servicesLink.addEventListener('click', function (e) {
+            e.stopPropagation();
+            window.location.href = this.getAttribute('href');
+        });
+    }
 
     // Clients carousel
     jQuery('.clients-carousel.owl-carousel').owlCarousel({
@@ -99,32 +95,39 @@
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         responsive: {
-            0: {
-                items: 2
-            },
-            600: {
-                margin: 0,
-                items: 3,
-            },
-            1000: {
-                items: 5,
-                margin: 0,
-            }
+            0: { items: 2 },
+            600: { margin: 0, items: 3 },
+            1000: { items: 5, margin: 0 }
         }
     });
 
 })(jQuery);
 
-// document.addEventListener("DOMContentLoaded", function () {
 
+// 🔽 WhatsApp component loader with fallback paths
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.querySelector("whatsapp-btn");
+    if (!container) return;
 
-// });
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     const dropdown = document.querySelector('.generator-dropdown');
-//     const menu = document.querySelector('.generator-menu');
-
-//     dropdown.addEventListener('click', function () {
-//         menu.classList.toggle('visible');
-//     });
-// });
+    // primary try (root pages)
+    fetch("whatsapp.html")
+        .then(res => {
+            if (!res.ok) throw new Error("primary path failed");
+            return res.text();
+        })
+        .then(data => {
+            container.innerHTML = data;
+        })
+        .catch(() => {
+            // fallback for /services/ pages
+            fetch("../whatsapp.html")
+                .then(res => {
+                    if (!res.ok) throw new Error("backup path failed");
+                    return res.text();
+                })
+                .then(data => {
+                    container.innerHTML = data;
+                })
+                .catch(err => console.log("WhatsApp component loading error:", err));
+        });
+});
